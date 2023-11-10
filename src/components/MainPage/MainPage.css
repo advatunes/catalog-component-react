@@ -1,0 +1,33 @@
+.root {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  color: #000;
+  background-color: #fff;
+  min-width: 320px;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 880px;
+  padding: 0 19px;
+}
+
+.title {
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 400;
+  margin: 20px auto ;
+  text-align: center;
+}
+
+@media screen and (max-width: 568px) {
+  .title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
