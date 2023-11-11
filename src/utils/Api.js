@@ -1,5 +1,5 @@
 const authorization = 'bDEyMzQ1Njc4OnAxMjM0NTY3OA==';
-const baseUrl = 'http://api-test.tdera.ru/api/RM_CALLCENTRE_SEARCH';
+const baseUrl = 'http://api-test.tdera.ru/api/';
 
 class CatalogApi {
   constructor({ baseUrl }) {
@@ -19,13 +19,24 @@ class CatalogApi {
   }
 
   getCatalogInfo(search) {
-    return this._request(`${this.baseUrl}`, {
+    return this._request(`${this.baseUrl}`+ "RM_CALLCENTRE_SEARCH", {
       method: 'POST',
       headers: {
         Authorization: `Basic ${authorization}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ search_string: search }),
+    });
+  }
+
+  getGoodsInfo(id) {
+    return this._request(`${this.baseUrl}`+ "GetGoodPhotosInBase64?ID_GOOD="+`${id}`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Basic ${authorization}`,
+        'Content-Type': 'application/json',
+      },
+
     });
   }
 }
