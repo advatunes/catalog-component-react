@@ -26,6 +26,9 @@
 }
 
 .search-form__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 70px;
   height: 48px;
   font-size: 12px;

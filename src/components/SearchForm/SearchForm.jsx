@@ -1,8 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
+import Spinner from '../Spinner/Spinner';
 
-function SearchForm({ onSearch, searchValue, setSearchValue, onShortFilms, shortFilms }) {
-  const [errorMessage, setErrorMessage] = useState('');
+function SearchForm({ onSearch, searchValue, setSearchValue, loading }) {
+  // const [errorMessage, setErrorMessage] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -16,10 +16,8 @@ function SearchForm({ onSearch, searchValue, setSearchValue, onShortFilms, short
   }
 
   function handleSearchChange(e) {
-    console.log(e.target.value);
     setSearchValue(e.target.value);
   }
-
 
   return (
     <section className='search-form'>
@@ -34,7 +32,8 @@ function SearchForm({ onSearch, searchValue, setSearchValue, onShortFilms, short
         />
 
         <button className='search-form__button' type='submit'>
-          Найти
+        {loading ? <Spinner /> : 'Найти'}
+
         </button>
       </form>
     </section>

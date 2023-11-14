@@ -3,3 +3,5 @@
 
 @import url(./components/MainPage/MainPage.css);
 @import url(./components/SearchForm/SearchForm.css);
+
+@import url(./components/Spinner/Spinner.css);
